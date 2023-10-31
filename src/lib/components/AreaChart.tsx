@@ -8,7 +8,7 @@ export interface Props {
   options: any;
 }
 
-export const LineChart = ({
+export const AreaChart = ({
   width = "100%",
   height = "100%",
   data,
