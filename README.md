@@ -1,26 +1,25 @@
-# financial-chart
+# financial-charts
 
-Build financial-chart using javascript
+Build financial-charts using typescript and google-charts
 
 <br>
 
-## Get Started
+## Usage
 
-```
-$ git clone https://github.com/seungdeok/financial-chart
-$ cd financial-chart
-$ yarn install
-$ yarn run dev
+```bash
+$ yarn add financial-charts
+$ #or
+$ npm i financial-charts
 ```
 
 <br>
 
 ## Bug Report
 
-If you find a bug, please report it to me using the [issues](https://github.com/seungdeok/financial-chart/issues) page on Github.
+If you find a bug, please report it to me using the [issues](https://github.com/seungdeok/financial-charts/issues) page on Github.
 
 <br>
 
 ## Contribute
 
-You're free to contribute to this project by submitting [issues](https://github.com/seungdeok/financial-chart/issues) and/or [PRs](https://github.com/seungdeok/financial-chart/pulls).
+You're free to contribute to this project by submitting [issues](https://github.com/seungdeok/financial-charts/issues) and/or [PRs](https://github.com/seungdeok/financial-charts/pulls).
