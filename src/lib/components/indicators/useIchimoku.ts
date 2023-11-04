@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
+import { Price } from "../../types/Price";
 
 // 일목균형표
-export interface ICalc {
-  data: {
-    high: number; // 고가
-    low: number; // 저가
-    close: number; // 종가
-  }[];
+export interface IArgs {
+  data: Price[];
   basePeriod: number; // 기준선 기간
   conversionPeriod: number; // 전환선 기간
   spanBPeriod: number; // 선행스팬 B 기간
@@ -27,7 +24,7 @@ export const getIchimoku = ({
   spanBPeriod,
   displacement,
   data,
-}: ICalc) => {
+}: IArgs) => {
   const baseLine: number[] = [];
   const conversionLine: number[] = [];
   const leadingSpanA: number[] = [];
@@ -93,7 +90,7 @@ export const useIchimoku = ({
   spanBPeriod,
   displacement,
   data,
-}: ICalc) => {
+}: IArgs) => {
   const [dataSource, setDataSource] = useState<IData>({
     conversionLine: [],
     baseLine: [],

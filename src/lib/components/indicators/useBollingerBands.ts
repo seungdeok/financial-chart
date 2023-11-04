@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
+import { Price } from "../../types/Price";
 
 export interface IArgs {
-  data: {
-    high: number; // 고가
-    low: number; // 저가
-    close: number; // 종가
-  }[];
+  data: Price[];
   period: number; // 기간
   deviation: number; // 승수
 }
