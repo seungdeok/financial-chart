@@ -36,7 +36,7 @@ export const getWR = ({ data, period }: IArgs) => {
   return { WR: williamsRs };
 };
 
-export const useDMI = ({ data, period }: IArgs) => {
+export const useWR = ({ data, period }: IArgs) => {
   const [dataSource, setDataSource] = useState<IData>({
     WR: [],
   });
