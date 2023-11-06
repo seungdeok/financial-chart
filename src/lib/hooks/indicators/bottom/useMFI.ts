@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Price } from "../../../types/Price";
+import { calcSMA } from "../../../utils/calcSMA";
 
 export interface IPrice extends Price {
   volume: number;
@@ -14,17 +15,6 @@ export interface IArgs {
 export interface IData {
   mfi: number[];
 }
-
-export const calculateSMA = ({
-  data,
-  period,
-}: {
-  data: number[];
-  period: number;
-}) => {
-  const sum = data.slice(0, period).reduce((acc, value) => acc + value, 0);
-  return sum / period;
-};
 
 export const getMFI = ({ data, period }: IArgs) => {
   const typicalPrices: number[] = [];
@@ -82,7 +72,7 @@ export const getMFI = ({ data, period }: IArgs) => {
           100 -
           100 /
             (1 +
-              calculateSMA({
+              calcSMA({
                 data: moneyFlowRatio.slice(i - period + 1, i + 1),
                 period,
               }));

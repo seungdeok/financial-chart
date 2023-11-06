@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Price } from "../../../types/Price";
+import { calcSMA } from "../../../utils/calcSMA";
 
 export interface IArgs {
   data: Price[];
@@ -9,17 +10,6 @@ export interface IArgs {
 export interface IData {
   adx: number[];
 }
-
-export const calculateSMA = ({
-  data,
-  period,
-}: {
-  data: number[];
-  period: number;
-}) => {
-  const sum = data.slice(0, period).reduce((acc, value) => acc + value, 0);
-  return sum / period;
-};
 
 export const calculateATR = ({
   data,
@@ -75,18 +65,16 @@ export const getADX = ({ data, period }: IArgs) => {
     if (i >= period) {
       const atr = calculateATR({ data: trValues.slice(i - period, i), period });
       const diPlus =
-        (100 *
-          calculateSMA({ data: dmPlusValues.slice(i - period, i), period })) /
+        (100 * calcSMA({ data: dmPlusValues.slice(i - period, i), period })) /
         atr;
       const diMinus =
-        (100 *
-          calculateSMA({ data: dmMinusValues.slice(i - period, i), period })) /
+        (100 * calcSMA({ data: dmMinusValues.slice(i - period, i), period })) /
         atr;
       const dx = (100 * Math.abs(diPlus - diMinus)) / (diPlus + diMinus);
       dxValues.push(dx);
 
       if (i >= period * 2 - 1) {
-        const adx = calculateSMA({
+        const adx = calcSMA({
           data: dxValues.slice(i - period + 1, i + 1),
           period,
         });
