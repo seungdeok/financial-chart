@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Price } from "../../types/Price";
+import { Price } from "../../../types/Price";
 
 export type TypePivotType = "standard" | "fibonacci" | "camarilla";
 
