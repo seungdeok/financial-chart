@@ -8,12 +8,10 @@
     "build": "lerna run build",
     "build:charts": "lerna run build --scope='financial-charts'",
     "build:core": "lerna run build --scope='*/core'",
-    "build:indicators": "lerna run build --scope='*/indicators'",
     "build:stories": "lerna run build-storybook --scope='*/stories'",
     "clean": "run-s clean:packages clean:modules",
     "clean:packages": "lerna run clean",
     "clean:modules": "lerna clean --yes",
-    "convert": "run-s link bootstrap",
     "link": "lerna link convert",
     "lint": "eslint . --ext ts --ext tsx --quiet",
     "lint:fix": "eslint . --ext ts --ext tsx --quiet --fix",
@@ -67,7 +65,6 @@
   },
   "dependencies": {
     "@financial-charts/core": "file:../core",
-    "@financial-charts/indicators": "file:../indicators",
     "@financial-charts/templates": "file:../templates",
     "financial-charts": "file:packages/charts"
   }
