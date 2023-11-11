@@ -2,10 +2,11 @@
 name: Build and Publish Storybook to GitHub Pages
 
 on:
+  push
   # Event for the workflow to run on
-  push:
-    branches:
-      - "main" # Replace with the branch you want to deploy from
+  # push:
+  # branches:
+  #   - "main" # Replace with the branch you want to deploy from
 
 permissions:
   contents: read
@@ -31,5 +32,5 @@ jobs:
         with:
           install_command: npm ci # default: npm ci
           build_command: npm run build && npm run build:stories # default: npm run build-storybook
-          path: packages/stories/storybook-static # default: dist/storybook
+          path: /packages/stories/storybook-static # default: dist/storybook
           checkout: false # default: true
