@@ -26,7 +26,6 @@
     "seungdeok"
   ],
   "dependencies": {
-    "@financial-charts/indicators": "file:../indicators",
     "@financial-charts/templates": "file:../templates",
     "@financial-charts/core": "file:../core"
   },

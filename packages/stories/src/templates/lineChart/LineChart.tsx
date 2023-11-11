@@ -1,5 +1,5 @@
 import React from "react";
-import { LineChart, LineChartProps } from "financial-charts";
+import { LineChart, LineChartProps } from "@financial-charts/templates";
 import { withAxis, PriceData } from "../../data/withAxis";
 import { DATA_SET } from "../../data/dummy";
 
