@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  CandlestickChart,
-  CandlestickChartProps,
-} from "@financial-charts/templates";
+import { CandlestickChart, CandlestickChartProps } from "financial-charts";
 import { withAxis, PriceData } from "../../data/withAxis";
 import { DATA_SET } from "../../data/dummy";
 

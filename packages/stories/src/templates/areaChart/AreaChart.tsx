@@ -1,5 +1,5 @@
 import React from "react";
-import { AreaChart, AreaChartProps } from "@financial-charts/templates";
+import { AreaChart, AreaChartProps } from "financial-charts";
 import { withAxis, PriceData } from "../../data/withAxis";
 import { DATA_SET } from "../../data/dummy";
 
