@@ -1,0 +1,33 @@
+{
+  "name": "@financial-charts/core",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "Build financial-chart using javascript",
+  "keywords": [
+    "react",
+    "javascript",
+    "typescript",
+    "react-google-charts",
+    "financial-charts",
+    "chart"
+  ],
+  "author": "seungdeok<akk9132@naver.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seungdeok/financial-charts"
+  },
+  "bugs": {
+    "url": "https://github.com/seungdeok/financial-charts/issues"
+  },
+  "contributors": [
+    "seungdeok"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && tsc"
+  }
+}
