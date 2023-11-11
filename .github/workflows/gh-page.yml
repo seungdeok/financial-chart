@@ -27,10 +27,14 @@ jobs:
         with:
           node-version: "18.x"
 
-      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+      - name: Install dependencies
+        run: npm install --no-package-lock
+
+      - name: Build storybook
+        run: npm run build && npm run build:stories
+      
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          install_command: npm install --no-package-lock # default: npm ci
-          build_command: npm run build && npm run build:stories # default: npm run build-storybook
-          path: packages/stories/storybook-static # default: dist/storybook
-          checkout: false # default: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: packages/stories/storybook-static
