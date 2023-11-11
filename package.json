@@ -1,71 +1,34 @@
 {
-  "name": "financial-charts",
-  "version": "0.0.1",
-  "private": false,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "browser": "./browser/specific/main.js",
-  "description": "Build financial-chart using javascript",
-  "keywords": [
-    "react",
-    "javascript",
-    "typescript",
-    "react-google-charts",
-    "financial-charts",
-    "chart"
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "author": "seungdeok<akk9132@naver.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/seungdeok/financial-charts"
-  },
-  "contributors": [
-    "seungdeok"
-  ],
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-google-charts": "^4.0.1",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.4.2",
-    "web-vitals": "^2.1.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "rm -rf dist && mkdir dist && tsc",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "build": "lerna run build",
+    "build:charts": "lerna run build --scope='financial-charts'",
+    "build:core": "lerna run build --scope='*/core'",
+    "build:indicators": "lerna run build --scope='*/indicators'",
+    "clean": "run-s clean:packages clean:modules",
+    "clean:packages": "lerna run clean",
+    "clean:modules": "lerna clean --yes",
+    "convert": "run-s link bootstrap",
+    "link": "lerna link convert",
+    "lint": "eslint . --ext ts --ext tsx --quiet",
+    "lint:fix": "eslint . --ext ts --ext tsx --quiet --fix",
+    "start": "run-p watch start:stories",
+    "start:stories": "lerna run start --stream",
+    "test": "lerna run test --stream",
+    "prestart": "npm run build",
+    "prepublishOnly": "npm run build",
+    "publish": "lerna publish from-package --yes",
+    "release": "lerna version --yes",
+    "release:pre": "lerna version --conventional-prerelease --yes",
+    "release:grad": "lerna version --conventional-graduate --yes",
+    "watch": "lerna run watch --parallel"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.1",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
@@ -75,11 +38,36 @@
     "@storybook/react": "^7.5.3",
     "@storybook/react-webpack5": "^7.5.3",
     "@storybook/testing-library": "^0.2.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "babel-loader": "^8.2.2",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^7.6.0",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-storybook": "^0.6.15",
+    "lerna": "^7.4.2",
+    "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "storybook": "^7.5.3",
+    "typescript": "^4.4.2",
     "webpack": "^5.89.0"
+  },
+  "dependencies": {
+    "@financial-charts/core": "file:../core",
+    "@financial-charts/indicators": "file:../indicators",
+    "@financial-charts/templates": "file:../templates",
+    "financial-charts": "file:packages/charts"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "packages": ["packages/*"],
+  "version": "0.0.1",
+  "npmClient": "npm",
+  "ignoreChanges": ["**/__tests__/**", "**/*.md"],
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    },
+    "publish": {
+      "preDistTag": "next",
+      "noGitReset": true
+    },
+    "version": {
+      "allowBranch": "main",
+      "conventionalCommits": true,
+      "createRelease": "github",
+      "gitRemote": "upstream",
+      "message": "chore(release): publish %v"
+    }
+  }
+}
