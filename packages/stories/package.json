@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "Build financial-chart using javascript",
+  "homepage": "https://seungdeok.github.io/financial-charts/",
   "keywords": [
     "react",
     "javascript",
