@@ -4,6 +4,16 @@ Build financial-charts using typescript and google-charts
 
 <br>
 
+## Development Usage
+
+```bash
+$ npm install
+$ npm run build
+$ npm run start:stories
+```
+
+<br>
+
 ## Usage
 
 ```bash
