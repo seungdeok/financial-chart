@@ -11,3 +11,4 @@ export * from "./getPivotPoints";
 export * from "./getADX";
 export * from "./getATR";
 export * from "./getCCI";
+export * from "./getDMI";
