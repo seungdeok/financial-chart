@@ -7,8 +7,8 @@ Build financial-charts using typescript and google-charts
 ## Development Usage
 
 ```bash
-$ npm install
 $ npm run build
+$ npm install
 $ npm run start:stories
 ```
 
