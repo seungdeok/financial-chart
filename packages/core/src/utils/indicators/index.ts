@@ -19,3 +19,4 @@ export * from "./getRSI";
 export * from "./getStochasticRSI";
 export * from "./getTradingVolume";
 export * from "./getVolumeOSC";
+export * from "./getWR";
