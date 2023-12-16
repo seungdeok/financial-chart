@@ -15,3 +15,4 @@ export * from "./getDMI";
 export * from "./getMACD";
 export * from "./getMFI";
 export * from "./getMomemtum";
+export * from "./getRSI";
