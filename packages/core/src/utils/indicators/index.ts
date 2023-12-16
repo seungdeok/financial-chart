@@ -14,3 +14,4 @@ export * from "./getCCI";
 export * from "./getDMI";
 export * from "./getMACD";
 export * from "./getMFI";
+export * from "./getMomemtum";
