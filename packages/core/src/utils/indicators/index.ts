@@ -10,3 +10,4 @@ export * from "./getPivotPoints";
 /* bottom */
 export * from "./getADX";
 export * from "./getATR";
+export * from "./getCCI";
