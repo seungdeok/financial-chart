@@ -17,3 +17,4 @@ export * from "./getMFI";
 export * from "./getMomemtum";
 export * from "./getRSI";
 export * from "./getStochasticRSI";
+export * from "./getTradingVolume";
